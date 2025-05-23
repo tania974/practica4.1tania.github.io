@@ -4,13 +4,13 @@ Proyecto de Creación Multimedia Interactiva de la Facultad de Bellas Artes de l
 ## 1 Datos
 Titulo : Práctica 4.1 sobre el videojuego de Madison (practica 3.1)
 
-Web: (url github.io)
+Web: https://tania974.github.io/practica4.1tania.github.io/
 
 Autor: Tania Corral Dueñas 
 
 Resumen : En este proyecto esta incluido el videojuego de Madison. Este este videojuego controlas a una niña que tiene el objetivo de escapar de una casa enbrujada antes de cinco minutos. Deberás interactuar con los objetos de la casa para poder salir.
 
-Estilo/género:  juego 
+Estilo/género:  juego aventura gráfica
 
 ![game image](Assets/docImages/1.png)
 ![game image](Assets/docImages/2.png)
@@ -62,7 +62,6 @@ No fucnionó bien la posición de los objetos debido a un fallo en la resolució
 Ha sido una experiencia interesante aunque bastante complicada ya que nunca habia tenido un acercamiento de este calibre en el ámbito de la programación. Aun así, ha sido interesante ver nuevas formas de creación de arte, inclinado más a la rama más "tecnológica". 
 
 ## 5 Referencias
-**Artículos y blogs **
 
 Recursos y materiales audiovisuales:
 Chatgpt
