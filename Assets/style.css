@@ -1,0 +1,568 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "help";
+    src: url("font/help.ttf");
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    width: 100%;
+    height: 700px;
+}
+
+#back {
+    position: relative;
+    width: 1490px;
+    height: 700px;
+    background-image: url(img/escenario.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: background-image 0.5s ease-in-out;
+
+    #player {
+        position: absolute;
+        left: 300px;
+        top: 400px;
+        width: 100px;
+        height: 290px;
+        background-image: url(img/player.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transform: scaleX(1);
+        z-index: 2;
+    }
+
+    #chair {
+        position: absolute;
+        height: 200px;
+        width: 150px;
+        left: 900px;
+        top: 300px;
+        cursor: pointer;
+        z-index: 3;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #chair:hover {
+        border-radius: 50%;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    #door {
+        position: absolute;
+        height: 360px;
+        width: 160px;
+        left: 330px;
+        top: 120px;
+        cursor: pointer;
+        z-index: 3;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #door:hover {
+        border-radius: 50%;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    #key {
+        position: absolute;
+        height: 50px;
+        width: 70px;
+        left: 460px;
+        top: 390px;
+        cursor: pointer;
+        z-index: 4;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #key:hover {
+        border-radius: 50%;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    #lock {
+        display: none;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        height: 500px;
+        width: 500px;
+        left: 450px;
+        top: 80px;
+        background-image: url(img/lock.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+        z-index: 20;
+
+        #out2 {
+            background-color: rgb(56, 5, 5);
+            color: white;
+            font-size: 2rem;
+            width: 40px;
+            text-align: center;
+            position: absolute;
+            left: 480px;
+            top: -20px;
+            cursor: pointer;
+            font-family: "help";
+        }
+
+        input {
+            background-color: #1e1e1e;
+            color: #e0cda9;
+            border: 1px solid #5c4b32;
+            padding: 8px 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            outline: none;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+            transition: border 0.3s, background-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #a67c52;
+            background-color: #2a2a2a;
+        }
+    }
+
+    #knife {
+        position: absolute;
+        height: 50px;
+        width: 90px;
+        left: 770px;
+        top: 390px;
+        cursor: pointer;
+        z-index: 3;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #knife:hover {
+        border-radius: 50%;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    #picture {
+        position: absolute;
+        height: 160px;
+        width: 110px;
+        left: 810px;
+        top: 120px;
+        cursor: pointer;
+        z-index: 3;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #picture:hover {
+        border-radius: 50%;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    #pictureImgSolve {
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        height: 500px;
+        width: 500px;
+        left: 450px;
+        top: 80px;
+        background-image: url(img/cutPicture.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+        z-index: 1;
+    }
+
+    #pictureImg {
+        display: none;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        height: 500px;
+        width: 500px;
+        left: 450px;
+        top: 80px;
+        background-image: url(img/cuadro.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+        z-index: 20;
+
+        #out {
+            background-color: rgb(56, 5, 5);
+            color: white;
+            font-size: 2rem;
+            width: 40px;
+            text-align: center;
+            position: absolute;
+            left: 410px;
+            top: -20px;
+            cursor: pointer;
+        }
+
+        #useKnife {
+            display: none;
+            position: absolute;
+            top: 40px;
+            color: white;
+            font-size: 1.5rem;
+            border-bottom: 2px solid white;
+            padding-bottom: .5rem;
+            width: 200px;
+            left: 430px;
+            cursor: pointer;
+        }
+    }
+
+    #knifeImg {
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        height: 500px;
+        width: 500px;
+        left: 450px;
+        top: 80px;
+        background-image: url(img/knife.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 20;
+        display: none;
+    }
+
+    #keyImg {
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        height: 500px;
+        width: 500px;
+        left: 450px;
+        top: 80px;
+        background-image: url(img/key.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 20;
+        display: none;
+    }
+
+    #texts {
+        position: absolute;
+        width: 700px;
+        height: auto;
+        margin: auto;
+        top: 700px;
+        left: 390px;
+        color: white;
+        text-align: center;
+        font-size: 1.8rem;
+        font-family: "help";
+
+        #talkGhost {
+            color: rgb(118, 2, 2);
+        }
+    }
+
+    #skull {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        margin: auto;
+        top: 490px;
+        left: 350px;
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 4;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #skull:hover {
+        border-radius: 50%;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    #fakeSkull {
+        position: absolute;
+        background-image: url(img/calavera.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 157px;
+        height: 157px;
+        left: 307px;
+        top: 484px;
+        z-index: 1;
+    }
+
+    #ghost {
+        position: absolute;
+        background-image: url(img/ghost.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 400px;
+        height: 400px;
+        left: 750px;
+        top: 200px;
+        z-index: 1;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+    }
+
+    #ventana {
+        position: absolute;
+        width: 160px;
+        height: 200px;
+        margin: auto;
+        top: 90px;
+        left: 590px;
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        z-index: 3;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #ventana:hover {
+        border-radius: 50%;
+        box-shadow: 0px 0px 3px white;
+    }
+
+    #evade {
+        width: 250px;
+        height: 400px;
+        margin: auto;
+        top: 200px;
+        left: 520px;
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        position: absolute;
+    }
+}
+
+#white {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+#ghostScream {
+    position: absolute;
+    background-image: url(img/grito.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#loose {
+    position: absolute;
+    background-image: url(img/loose.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    z-index: 31;
+    width: 100%;
+    height: 100%;
+    display: none;
+    transition: opacity 4s ease-in-out;
+    opacity: 0;
+}
+
+#win {
+    position: absolute;
+    background-image: url(img/win.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    z-index: 31;
+    width: 100%;
+    height: 100%;
+    display: none;
+    transition: opacity 4s ease-in-out;
+    opacity: 0;
+}
+
+#contador {
+    position: absolute;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #3a2c1c;
+    background-color: rgba(255, 239, 213, 0.85);
+    /* tono pergamino */
+    border: 3px solid #5c4732;
+    border-radius: 12px;
+    padding: 10px 20px;
+    width: fit-content;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+#contador:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 230, 200, 0.95);
+    cursor: default;
+}
+
+#stage {
+    display: none;
+}
+
+#stage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url('img/particula.png') no-repeat center/contain;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20vh) scale(1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sway {
+
+    0%,
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(50px) rotate(5deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 0.5;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Clases de animación */
+.anim-float {
+    animation-name: floatUp;
+}
+
+.anim-sway {
+    animation-name: sway;
+}
+
+.anim-pulse {
+    animation-name: pulse;
+}
+
+.anim-spin {
+    animation-name: spin;
+}
+
+
+.particleW {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url('img/particulaW.png') no-repeat center/contain;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+
+button {
+    background-color: #3b2f24;
+    color: #e0cda9;
+    border: 1px solid #5c4b32;
+    padding: 8px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 30;
+}
+
+button:hover {
+    background-color: #4a392d;
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.98);
+    background-color: #2f241d;
+}
+
+.reset{
+    position: absolute;
+    left: 690px;
+    top: 600px;
+    padding: 12px 20px;
+    font-size: 22px;
+}
+

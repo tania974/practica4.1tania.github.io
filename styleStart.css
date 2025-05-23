@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'oldFont';
+    src: url('HelpMe.ttf');
+    /* Cambia si tienes otra fuente tipo manuscrita */
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url(Assets/img/fondo.png);
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+#intro {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    background: rgba(154, 102, 50, 0.85);
+    margin-left: 400px;
+    color: #e6d3b3;
+    font-family: 'oldFont', serif;
+    border: 2px solid #8b6f47;
+    border-radius: 12px;
+    padding: 40px;
+    width: 600px;
+    text-align: center;
+    box-shadow: 0 0 20px #000000aa;
+    z-index: 10;
+}
+
+#intro h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #f1e1c1;
+    text-shadow: 1px 1px 2px #000;
+}
+
+#intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#intro button {
+    background-color: #7c4a1f;
+    color: #fcecd2;
+    font-size: 1.2rem;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 8px #000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+#intro button:hover {
+    background-color: #a45f2c;
+    transform: scale(1.05);
+}
+
+#black {
+    background-color: black;
+    width: 2000px;
+    height: 2000px;
+    display: none;
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    left: -5rem;
+    margin: 0;
+    padding: 0;
+
+}
+
+img {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}

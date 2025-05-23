@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleStart.css">
+</head>
+
+<body>
+    <div id="intro">
+        <h1>¡Corre, Madison!</h1>
+        <p>Madison tiene que escapar de la casa encantada antes de cinco minutos.<br>
+            Cuando el tiempo se acabe, el fantasma se levantará.</p>
+
+        <p><strong>Mueve a Madison por el escenario con las teclas:</strong></p>
+
+        <img src="Assets/img/teclas.png" alt="">
+
+        <p>Para interactuar con el escenario, selecciona con el ratón los objetos que puedan ser interactuados.<br>
+            Sabrás cuáles son ya que se iluminarán.</p>
+
+        <img src="Assets/img/raton.png" alt="">
+
+        <button id="start">Empezar</button>
+        <audio src="Assets/audio/fondo.mp3" autoplay loop></audio>
+    </div>
+
+    <div id="black"></div>
+
+    <script>
+        document.getElementById("start").addEventListener("click", () => {
+            const laught = new Audio('Assets/audio/inicio.mp3');
+            laught.play();
+            setTimeout(() => {
+                document.getElementById("black").style.display = "block";
+            }, 1);
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = 1;
+                document.getElementById("black").style.zIndex = 10;
+            }, 100);
+            setTimeout(() => {
+                window.location.assign("Assets/play.html");
+            }, 4000);
+        })
+    </script>
+
+</body>
+
+</html>
