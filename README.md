@@ -12,7 +12,12 @@ Resumen : En este proyecto esta incluido el videojuego de Madison. Este este vid
 
 Estilo/género:  juego 
 
-(insertar imágenes a resolucion de 100px alto)
+![game image](Assets/docImages/1png)
+![game image](Assets/docImages/2png)
+![game image](Assets/docImages/3png)
+![game image](Assets/docImages/4png)
+![game image](Assets/docImages/5png)
+![game image](Assets/docImages/6png)
 
 Resolución: 1490x700 no reescalable
 
