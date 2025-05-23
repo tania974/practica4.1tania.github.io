@@ -33,7 +33,15 @@ Github:
 
 ## 2. Memoria del proyecto
 ### 2.1. Storyboard:
-(narra brevemente lo que sucede en tu proyecto, puedes usar 3-4 imágenes de apoyo)
+Madison aparece en la casa y busca alguna manera de poder escapar.
+
+En un cajón encuentra un cuchillo y se lo guarda.
+
+En la pared hay un cuadro, si Madison tiene el cuchillo, lo rajará y verá una combinación de cuatro números.
+
+Encontrará otro cajón con un candado numérico, al introducir el numero del cuadro en el candado se abrirá.
+
+Dentro habrá una llave que Madison cogerá y usará para abrir la puerta y conseguir escapar.
 
 ## 3. Metodología
 
@@ -45,10 +53,7 @@ Orientado a cualquier público mayor de 10 años.
 
 Etapa 2: Desarrollo / actividades realizadas
 
-Video
-Instrucciones y ayuda al usuario
-Menús y elementos de navegación (botones)
-etc.
+Para mover a Madison a través del escenario se utilizan las teclas w a s d. Para interactuar con los objetos se usa el cursor y el click izquierdo.
 
 Etapa 3: Problemas identificados
 No fucnionó bien la posición de los objetos debido a un fallo en la resolución del fondo. Esta ya arreglado haciendo el fondo estático.
